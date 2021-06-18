@@ -10,7 +10,7 @@ export default memo(function IYDiscover(props) {
     request({
       url: "/banner",
     }).then((res) => {
-      console.log(res);
+      // console.log(res);
     });
   });
   return (

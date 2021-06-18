@@ -1,20 +1,32 @@
-import React, { memo, useEffect } from "react";
-import { useDispatch, useSelector, shallowEqual } from "react-redux";
-import { getTopBannerAction } from "./store/actionCreators";
+import React, { memo } from "react";
+
+import {
+  RecommendWrapper,
+  RecommendLeft,
+  RecommendRight,
+  Content,
+} from "./style";
+
+import IYTopBanner from "./c-cpns/top-banner";
+import IYHotRecommend from "./c-cpns/hot-recommend";
+import IYRecommendRanking from "./c-cpns/recommend-ranking";
+import IYNewAlbum from "./c-cpns/new-album";
 
 function IYRecommend(props) {
-  console.log(props);
-  const { topBanners } = useSelector((state) => {
-    return { topBanners: state.get('recommend').get("topBanners") };
-  }, shallowEqual);
-  console.log(topBanners);
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getTopBannerAction());
-  }, [dispatch]);
-
-  return <div>推荐</div>;
+  // console.log(props);
+  return (
+    <RecommendWrapper>
+      <IYTopBanner />
+      <Content>
+        <RecommendLeft>
+          <IYHotRecommend />
+          <IYRecommendRanking />
+          <IYNewAlbum />
+        </RecommendLeft>
+        <RecommendRight></RecommendRight>
+      </Content>
+    </RecommendWrapper>
+  );
 }
 
 export default memo(IYRecommend);
