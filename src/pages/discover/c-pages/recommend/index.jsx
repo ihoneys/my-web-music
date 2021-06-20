@@ -20,8 +20,8 @@ function IYRecommend(props) {
       <Content>
         <RecommendLeft>
           <IYHotRecommend />
-          <IYRecommendRanking />
           <IYNewAlbum />
+          <IYRecommendRanking />          
         </RecommendLeft>
         <RecommendRight></RecommendRight>
       </Content>

@@ -10,9 +10,12 @@ import { Carousel } from "antd";
 export default memo(function IYTopBanner() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const { topBanners } = useSelector((state) => {
-    return { topBanners: state.get("recommend").get("topBanners") };
-  }, shallowEqual);
+  const { topBanners } = useSelector(
+    (state) => ({
+      topBanners: state.getIn(["recommend", "topBanners"]),
+    }),
+    shallowEqual
+  );
   // console.log(topBanners);
 
   const dispatch = useDispatch();

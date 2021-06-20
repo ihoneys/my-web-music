@@ -24,7 +24,7 @@ const IYThemeHeaderIcon = function (props) {
       </div>
       <div className="right">
         <a href="www.baidu.com">更多</a>
-        <i className="icon"></i>
+        <i className="icon sprite_02"></i>
       </div>
     </HeaderWrapper>
   );
